@@ -22,7 +22,7 @@ about MAC addresses and the end devices that access them ...
 
 ---
 
-Mandatory part :
+# Mandatory part :
 
 This project will consist of setting up several environments under specific rules.
 It is divided into three parts you have to do in the following order:
