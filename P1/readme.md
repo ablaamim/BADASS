@@ -81,4 +81,41 @@ sudo apt install docker-compose
 
 ---
 
-# FRrouting docker image
+# Images setup
+
+## First Image: Host Node
+
+* Base Image : Alpine Linux (lightweight, minimal system).
+Core Tool: Busybox for essential command-line tools.
+
+* Configuration :
+Basic System: Only requires a minimal Unix environment with Busybox to interact with the system.
+
+* Service:
+Busybox Shell : Provides essential tools for basic commands and network debugging (e.g., ping, ifconfig).
+
+* Use Case :
+Acts as a simple network host or endpoint for testing connectivity, running lightweight commands, and serving as a node in a network topology.
+Useful for verifying routing configurations, performing network diagnostics, and testing network reachability.
+
+## Second Image: Router Node
+
+* Base Image : Linux-based image (e.g., Debian or Alpine) with FRRouting (FRR) software or Quagga/Zebra for routing.
+
+* Configuration :
+Routing Software Configuration:
+Enable BGPD for external routing (simulates ISP-level routing).
+Enable OSPF for internal routing (simulates intra-organization routing).
+Enable IS-IS for high-scalability internal routing (simulates large ISP networks).
+
+* Services :
+BGPD (BGP Daemon): Manages Border Gateway Protocol for external routing.
+OSPF Daemon: Handles internal routing within autonomous systems.
+
+* IS-IS Daemon : Provides ISP-grade internal routing, suited for large-scale networks.
+Busybox: Adds basic utilities for system interaction, troubleshooting, and network commands.
+
+* Use Case :
+Functions as a network router with multiple routing protocols, allowing for complex routing simulations.
+Ideal for setting up realistic networking environments where both internal and external routing protocols are needed.
+Simulates interactions between internal enterprise networks and external internet-facing networks in GNS3.
