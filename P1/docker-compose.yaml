@@ -1,0 +1,31 @@
+# Version of the Docker Compose file format. Version 3 is compatible with Docker Swarm and Compose.
+version: '3'
+
+services:  # Defines the services (containers) that will run as part of the application.
+  frr:  # This is the service name, you can reference this when running `docker-compose`.
+    # The Docker image to use for the container. In this case, it uses the latest version of the frrouting/frr image.
+    image: frrouting/frr:latest
+    
+    # Sets the hostname inside the container to 'router_ablaamim'. This is the name by which the container will be identified inside its network.
+    hostname: router_ablaamim
+
+    # The name of the container in Docker. It will be named 'frrouting_node' instead of a randomly generated name.
+    container_name: frrouting_node
+
+    # The command to execute when the container starts. The command is passed to bash for execution.
+    command: >
+      bash -c "
+        # Use sed (stream editor) to modify configuration files. This replaces the default settings for routing daemons
+        # to enable the daemons bgpd, ospfd, and isisd. Each daemon is initially disabled with 'no', 
+        # and sed changes 'no' to 'yes' to enable them.
+        
+        sed -i 's/bgpd=no/bgpd=yes/' /etc/frr/daemons && \
+        sed -i 's/ospfd=no/ospfd=yes/' /etc/frr/daemons && \
+        sed -i 's/isisd=no/isisd=yes/' /etc/frr/daemons && \
+        
+        # Start the FRR daemons using the frrinit.sh script.
+        /usr/lib/frr/frrinit.sh start && \
+        
+        # Keep the container running indefinitely by using tail to follow /dev/null.
+        # Without this command, the container will stop after the initial process completes.
+        tail -f /dev/null"

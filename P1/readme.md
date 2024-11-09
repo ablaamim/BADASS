@@ -67,13 +67,16 @@ Common protocols: IP, ICMP, and routing protocols like OSPF and BGP.
 
 ---
 
-# GNS3 Installation :
+# GNS3 Installation 
 
 ```bash
 sudo add-apt-repository ppa:gns3/ppa
 sudo apt update                                
 sudo apt install gns3-gui
 sudo apt install docker.io
+sudo apt install docker-compose
 ```
 
+---
 
+# FRrouting docker image
