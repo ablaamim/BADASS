@@ -64,3 +64,16 @@ Routers are Layer 3 devices, determining paths for packets to reach different ne
 Common protocols: IP, ICMP, and routing protocols like OSPF and BGP.
 
 > In GNS3, you'll be able to simulate both Layer 2 and Layer 3 functionalities by using switches and routers in your topologies, helping you understand both local and global network communication patterns. This will be especially useful as you work with BGP, which relies heavily on Layer 3 routing concepts.
+
+---
+
+# GNS3 Installation :
+
+```bash
+sudo add-apt-repository ppa:gns3/ppa
+sudo apt update                                
+sudo apt install gns3-gui
+sudo apt install docker.io
+```
+
+

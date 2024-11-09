@@ -26,8 +26,11 @@ about MAC addresses and the end devices that access them ...
 
 This project will consist of setting up several environments under specific rules.
 It is divided into three parts you have to do in the following order:
-• Part 1: GNS3 configuration with Docker.
-• Part 2: Discovering a VXLAN.
-• Part 3: Discovering BGP with EVPN.
+
+* Part 1: GNS3 configuration with Docker.
+
+* Part 2: Discovering a VXLAN.
+
+* Part 3: Discovering BGP with EVPN.
 
 ---
