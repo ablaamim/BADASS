@@ -8,7 +8,7 @@ Requirements :
 
 * VirtualBox as hypervisor
 
-* Ubuntu < 23.04 (The gns3 PPA currently supports only Ubuntu 22.10 and earlier because it hasn't been updated to 23.04 yet)
+* Ubuntu < 22.04 (The gns3 PPA currently supports only Ubuntu 22.10 and earlier because it hasn't been updated to 23.04 yet)
 
 * GNS3
 
@@ -36,6 +36,10 @@ Key Functionalities:
 * Integration with External Software: Can integrate with other tools like Wireshark for packet capture, or with virtual machines for end-to-end network simulations.
 
 * Layered Simulation: Supports both Layer 2 and Layer 3 configurations, helping you explore both switching and routing.
+
+## What is a packet routing software
+
+Packet routing software, like FRRouting (FRR) and Zebra, manages how data packets move through a network. In any network, packets need specific paths to get from one endpoint to another, especially across multiple routers, subnets, or different network types. Routing software determines these paths based on various routing protocols and configurations, allowing routers to communicate, discover routes, and dynamically adjust paths as needed.
 
 ## Border Gateway Protocol (BGP)
 
@@ -100,7 +104,7 @@ Useful for verifying routing configurations, performing network diagnostics, and
 
 ## Second Image: Router Node
 
-* Base Image : Linux-based image (e.g., Debian or Alpine) with FRRouting (FRR) software or Quagga/Zebra for routing.
+* Base Image : Linux-based image FRRouting (FRR) 
 
 * Configuration :
 Routing Software Configuration:
@@ -119,3 +123,7 @@ Busybox: Adds basic utilities for system interaction, troubleshooting, and netwo
 Functions as a network router with multiple routing protocols, allowing for complex routing simulations.
 Ideal for setting up realistic networking environments where both internal and external routing protocols are needed.
 Simulates interactions between internal enterprise networks and external internet-facing networks in GNS3.
+
+
+
+
