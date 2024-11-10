@@ -1,0 +1,6 @@
+FROM frrouting/frr:latest
+
+RUN apk add vim
+
+COPY ./daemons /etc/frr/daemons
+
