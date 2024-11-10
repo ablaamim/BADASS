@@ -28,3 +28,9 @@ services:  # Defines the services (containers) that will run as part of the appl
         # Keep the container running indefinitely by using tail to follow /dev/null.
         # Without this command, the container will stop after the initial process completes.
         tail -f /dev/null"
+ # Defines the Alpine service
+  alpine:
+    image: alpine:latest  # Alpine Linux latest image
+    hostname: host_ablaamim  # Set hostname inside the container
+    container_name: host_node  # Name of the container in Docker
+    command: tail -f /dev/null  # Keeps the Alpine container running
